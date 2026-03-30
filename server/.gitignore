@@ -1,0 +1,99 @@
+##############################
+# .NET / Visual Studio
+##############################
+
+# Build results
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+##############################
+# .NET runtime / publish
+##############################
+
+# Published output
+publish/
+appsettings.Development.json
+
+# ASP.NET Core
+wwwroot/lib/
+
+##############################
+# Logs
+##############################
+
+*.log
+
+##############################
+# OS files
+##############################
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+##############################
+# NuGet
+##############################
+
+# Packages (usually restored automatically)
+packages/
+*.nupkg
+*.snupkg
+
+##############################
+# User-specific files
+##############################
+
+*.userprefs
+
+##############################
+# Testing
+##############################
+
+TestResults/
+
+##############################
+# Dotnet tools
+##############################
+
+.dotnet/
+
+##############################
+# Entity Framework
+##############################
+
+# EF Core local databases (if any)
+*.db
+*.sqlite
+
+##############################
+# Environment variables / secrets
+##############################
+
+.env
+.env.*
+secrets.json
+
+##############################
+# Generated files
+##############################
+
+*.dll
+*.exe
+*.pdb
+*.cache
