@@ -18,7 +18,7 @@ function NavBar({ isConnected, setIsConnected }) {
           </li>
           {isConnected && (
             <li className="navbar-item">
-              {/*<Link to="/profile" className="navbar-link">Profile</Link>*/}
+              <Link to="/analytique" className="navbar-link">Analytique</Link>
             </li>
           )}
         </ul>

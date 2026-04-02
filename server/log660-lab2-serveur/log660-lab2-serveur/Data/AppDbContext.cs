@@ -40,6 +40,12 @@ namespace log660_lab2_serveur.Data
 
         public DbSet<Location> Locations => Set<Location>();
 
+        // Entrepot de données - Dimensions et faits
+        public DbSet<DimClient> DimClients => Set<DimClient>();
+        public DbSet<DimTemps> DimTemps => Set<DimTemps>();
+        public DbSet<DimFilm> DimFilms => Set<DimFilm>();
+        public DbSet<FaitLocation> FaitsLocation => Set<FaitLocation>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -205,6 +211,27 @@ namespace log660_lab2_serveur.Data
                 .HasOne(l => l.CopieFilm)
                 .WithMany(c => c.Locations)
                 .HasForeignKey(l => l.IdCopie)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // DimClient → FaitLocation (1:N)
+            modelBuilder.Entity<FaitLocation>()
+                .HasOne(f => f.DimClient)
+                .WithMany(c => c.FaitsLocation)
+                .HasForeignKey(f => f.IdDimClient)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // DimTemps → FaitLocation (1:N)
+            modelBuilder.Entity<FaitLocation>()
+                .HasOne(f => f.DimTemps)
+                .WithMany(t => t.FaitsLocation)
+                .HasForeignKey(f => f.IdDimTemps)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // DimFilm → FaitLocation (1:N)
+            modelBuilder.Entity<FaitLocation>()
+                .HasOne(f => f.DimFilm)
+                .WithMany(film => film.FaitsLocation)
+                .HasForeignKey(f => f.IdDimFilm)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

@@ -7,6 +7,7 @@ import HomepageConnected from './pages/HomepageConnected';
 import ProfilePage from './pages/ProfilePage';
 import MoviePage from './pages/MoviePage';
 import PersonPage from './pages/PersonPage';
+import AnalytiquePage from './pages/AnalytiquePage';
 
 function  App() {
   const [isConnected, setIsConnected] = useState(() => {
@@ -31,6 +32,7 @@ function  App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/movie/:movieId" element={<MoviePage />} />
           <Route path="/personnes/:id" element={<PersonPage />} />
+          <Route path="/analytique" element={<AnalytiquePage />} />
           <Route path="*" element={<h1>404 Not Found</h1>} />
         </Routes>
       </div>

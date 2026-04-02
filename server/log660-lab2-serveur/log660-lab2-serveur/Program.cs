@@ -42,6 +42,7 @@ builder.Services.AddScoped<IPersonneRepository, PersonneRepository>();
 builder.Services.AddScoped<IPersonneService, PersonneService>();
 builder.Services.AddScoped<ILocationRepository, LocationRepository>();
 builder.Services.AddScoped<ILocationService, LocationService>();
+builder.Services.AddScoped<IAnalytiqueService, AnalytiqueService>();
 
 var app = builder.Build();
 
